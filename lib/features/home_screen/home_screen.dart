@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:news_app/core/styles/app_text_styles.dart';
+import 'package:news_app/features/home_screen/widgets/article_card_widget.dart';
 import 'package:news_app/features/home_screen/widgets/custom_category_item_widget.dart';
 import 'package:news_app/features/home_screen/widgets/top_headline_item_widget.dart';
 
@@ -64,6 +65,46 @@ class _HomeScreenState extends State<HomeScreen> {
                   date: '10/4/2025',
                 ),
               ],
+            ),
+          ),
+          const SizedBox(height: 24),
+          Expanded(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 32.w),
+              child: ListView(
+                children: [
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                  ArticleCardWidget(
+                    title: "Another news for Flutter",
+                    authorName: "Freddy Rafik",
+                    date: "12/8/2026",
+                  ),
+                ],
+              ),
             ),
           ),
         ],
