@@ -4,24 +4,29 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:news_app/core/styles/app_colors.dart';
 
 class AppTextStyles {
-  static TextStyle onBoardingTitleStyle = GoogleFonts.inter(
+  static TextStyle titleStyles = GoogleFonts.inter(
     fontSize: 32.sp,
     fontWeight: FontWeight.w700,
-    color: AppColors.white,
+    color: const Color(0xff231F20),
   );
   static TextStyle onBoardingDescriptionStyle = GoogleFonts.inter(
     fontSize: 13.sp,
     fontWeight: FontWeight.normal,
-    color: AppColors.white,
+    color: AppColors.blackColor,
   );
   static TextStyle white14SemiBold = GoogleFonts.inter(
     fontSize: 14.sp,
     fontWeight: FontWeight.w500,
-    color: AppColors.white,
-  );
-  static TextStyle black15Medium = GoogleFonts.inter(
-    fontSize: 16.sp,
-    fontWeight: FontWeight.w500,
     color: AppColors.blackColor,
+  );
+  static TextStyle black14Semibold = GoogleFonts.inter(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.w700,
+    color: AppColors.blackColor,
+  );
+  static TextStyle grey14Regular = GoogleFonts.inter(
+    fontSize: 14.sp,
+    fontWeight: FontWeight.normal,
+    color: const Color(0xff878787),
   );
 }
