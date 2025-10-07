@@ -99,8 +99,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: ListView.builder(
                       itemCount: topHeadlinesModel.articles!.length,
                       itemBuilder: (context, index) {
-                        Article article =
-                            topHeadlinesModel.articles![index + 1];
+                        // TODO: Increment the index and manage exception
+                        Article article = topHeadlinesModel.articles![index];
                         return ArticleCardWidget(
                           title: article.title ?? "",
                           authorName: article.author ?? "Unknown",
