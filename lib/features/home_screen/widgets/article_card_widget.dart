@@ -31,6 +31,7 @@ class ArticleCardWidget extends StatelessWidget {
                 width: 238.w,
                 child: Text(
                   title,
+                  maxLines: 2,
                   style: AppTextStyles.titleStyles.copyWith(
                     fontSize: 18.sp,
                     color: Colors.black,
@@ -38,7 +39,13 @@ class ArticleCardWidget extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              Text("$authorName - $date", style: AppTextStyles.grey14Regular),
+              SizedBox(
+                width: 238.w,
+                child: Text(
+                  "$authorName - $date",
+                  style: AppTextStyles.grey14Regular,
+                ),
+              ),
             ],
           ),
           SizedBox(

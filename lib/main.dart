@@ -1,11 +1,13 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:news_app/core/networking/dio_helper.dart';
 import 'package:news_app/core/routing/router_generation_config.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  DioHelper.initDio();
 
   runApp(
     EasyLocalization(
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: false,
       builder: (context, child) {
         return MaterialApp.router(
-          title: 'News App',
+          title: 'My News',
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
