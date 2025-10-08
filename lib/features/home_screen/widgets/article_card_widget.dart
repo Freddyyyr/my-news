@@ -59,6 +59,10 @@ class ArticleCardWidget extends StatelessWidget {
                     "https://img.freepik.com/free-vector/people-showcasing-different-types-ways-access-news_53876-43017.jpg?semt=ais_hybrid&w=740&q=80",
                 height: 206.h,
                 fit: BoxFit.fill,
+                placeholder: (context, url) => const Center(
+                  child: CircularProgressIndicator(color: Colors.grey),
+                ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
               ),
             ),
           ),
