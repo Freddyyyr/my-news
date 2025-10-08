@@ -4,15 +4,20 @@ import 'package:news_app/core/styles/app_text_styles.dart';
 
 class CustomCategoryItemWidget extends StatelessWidget {
   final String title;
+  final Function() onTap;
 
-  const CustomCategoryItemWidget({super.key, required this.title});
+  const CustomCategoryItemWidget({
+    super.key,
+    required this.title,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(right: 16.w),
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: onTap,
         style: ButtonStyle(
           padding: WidgetStateProperty.all(
             EdgeInsets.symmetric(horizontal: 24.h, vertical: 6.h),

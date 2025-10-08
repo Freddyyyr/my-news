@@ -1,6 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
+import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/core/styles/app_text_styles.dart';
 import 'package:news_app/features/home_screen/models/top_headlines_model.dart';
 import 'package:news_app/features/home_screen/services/home_screen_services.dart';
@@ -49,8 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
             return Center(child: Text(snapshot.error.toString()));
           }
           if (snapshot.hasData) {
-            TopHeadlinesModel topHeadlinesModel =
-                snapshot.data! as TopHeadlinesModel;
+            ArticlesModel topHeadlinesModel = snapshot.data! as ArticlesModel;
             if (topHeadlinesModel.totalResults == 0) {
               return Center(child: Text("no_results_found".tr()));
             }
@@ -67,10 +68,42 @@ class _HomeScreenState extends State<HomeScreen> {
                       scrollDirection: Axis.horizontal,
                       physics: const BouncingScrollPhysics(),
                       children: [
-                        CustomCategoryItemWidget(title: "travel".tr()),
-                        CustomCategoryItemWidget(title: "technology".tr()),
-                        CustomCategoryItemWidget(title: "business".tr()),
-                        CustomCategoryItemWidget(title: "entertainment".tr()),
+                        CustomCategoryItemWidget(
+                          title: "travel".tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: "travel".tr(),
+                            );
+                          },
+                        ),
+                        CustomCategoryItemWidget(
+                          title: "technology".tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: "technology".tr(),
+                            );
+                          },
+                        ),
+                        CustomCategoryItemWidget(
+                          title: "business".tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: "business".tr(),
+                            );
+                          },
+                        ),
+                        CustomCategoryItemWidget(
+                          title: "entertainment".tr(),
+                          onTap: () {
+                            GoRouter.of(context).pushNamed(
+                              AppRoutes.searchResultScreen,
+                              extra: "entertainment".tr(),
+                            );
+                          },
+                        ),
                       ],
                     ),
                   ),

@@ -5,17 +5,17 @@ import 'package:news_app/core/networking/api_endpoints.dart';
 import 'package:news_app/core/networking/dio_helper.dart';
 import 'package:news_app/features/home_screen/models/top_headlines_model.dart';
 
-class HomeScreenServices {
-  getTopHeadlineArticle() async {
+class SearchResultServices {
+  searchItemByName(String query) async {
     try {
       final response = await DioHelper.getRequest(
-        endPoint: ApiEndpoints.topHeadlinesEndpoint,
-        query: {"apiKey": AppConstants.newsApiKey, "country": "us"},
+        endPoint: ApiEndpoints.searchEndpoint,
+        query: {"apiKey": AppConstants.newsApiKey, "q": query},
       );
       if (response.statusCode == 200) {
-        ArticlesModel topHeadlinesModel = ArticlesModel.fromJson(response.data);
-        log(topHeadlinesModel.totalResults.toString());
-        return topHeadlinesModel;
+        ArticlesModel articlesModel = ArticlesModel.fromJson(response.data);
+        log(articlesModel.totalResults.toString());
+        return articlesModel;
       }
     } catch (e) {
       log(e.toString());

@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:news_app/core/routing/app_routes.dart';
 import 'package:news_app/features/home_screen/home_screen.dart';
+import 'package:news_app/features/search_result_screen/search_result_screen.dart';
 
 class RouterGenerationConfig {
   static GoRouter goRouter = GoRouter(
@@ -20,7 +21,10 @@ class RouterGenerationConfig {
       GoRoute(
         path: AppRoutes.searchResultScreen,
         name: AppRoutes.searchResultScreen,
-        builder: (context, state) => Container(),
+        builder: (context, state) {
+          String query = state.extra as String;
+          return SearchResultScreen(query: query);
+        },
       ),
       GoRoute(
         path: AppRoutes.articleDetailsScreen,
