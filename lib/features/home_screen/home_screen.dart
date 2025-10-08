@@ -8,6 +8,7 @@ import 'package:news_app/features/home_screen/models/top_headlines_model.dart';
 import 'package:news_app/features/home_screen/services/home_screen_services.dart';
 import 'package:news_app/features/home_screen/widgets/article_card_widget.dart';
 import 'package:news_app/features/home_screen/widgets/custom_category_item_widget.dart';
+import 'package:news_app/features/home_screen/widgets/search_textfield_widget.dart';
 import 'package:news_app/features/home_screen/widgets/top_headline_item_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,16 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Color(0xffE9EEFA),
         toolbarHeight: 80.h,
         title: Text("Explore".tr(), style: AppTextStyles.titleStyles),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.search),
-              color: Color(0xff231F20),
-            ),
-          ),
-        ],
+        actions: [SearchTextfieldWidget()],
       ),
       body: FutureBuilder(
         future: HomeScreenServices().getTopHeadlineArticle(),
